@@ -110,6 +110,7 @@
             android:layout_marginTop="2dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@id/add_image"
             android:backgroundTint="@color/registration_btn"
             android:text="Post Now !"
             android:textColor="@color/black" />
