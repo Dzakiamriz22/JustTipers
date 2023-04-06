@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="registration_background">#6E83C4</color>
+    <color name="registration_btn">#F88DAD</color>
+    <color name="tipers_background">#FBCD7E</color>
+    <color name="button_tipers">#6e83c4</color>
+    <color name="post_color">#fffaf2</color>
+    <color name="post_color2">#fff5e5</color>
+    <color name="profil_btn">#d6daeb</color>
+    <color name="setting_btn">#5e71a9</color>
+    <color name="purple_200">#CE93D8</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilActivity"
+    android:background="@drawable/bg_profile">
+
+    <ImageView
+        android:id="@+id/ImageLogo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/ButtonLogout"
+        android:layout_width="48dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logout"
+        android:contentDescription="LogoutButton"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Buyer Account"
+        android:textStyle="bold"
+        android:textSize="32dp"/>
+
+    <ImageView
+        android:id="@+id/ImageView3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Follower"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/profil_reg"/>
+
+    <LinearLayout
+        android:id="@+id/Follower"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImageView3"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonsLayout"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[jumlah]" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FOLLOWERS" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[jumlah]" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FOLLOWING" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[jumlah]" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HISTORY" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/BeTipers"
+        android:layout_marginBottom="80dp">
+
+        <Button
+            android:id="@+id/editProfileButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Profile"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/profil_btn"
+            android:textColor="@color/black"
+            android:clickable="true"/>
+
+        <Button
+            android:id="@+id/addFriendsButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add Friends"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/profil_btn"
+            android:textColor="@color/black"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/BeTipers"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        android:layout_marginBottom="45dp">
+
+        <Button
+            android:id="@+id/BeATipersButton"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="Be A Tipers"
+            android:clickable="true"
+            android:backgroundTint="@color/setting_btn"/>
+
+        <Button
+            android:id="@+id/SettingButton"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:text="Settings"
+            android:clickable="true"
+            android:backgroundTint="@color/setting_btn"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/home_profile_button"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/bag_button"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/profile_on"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
