@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "840422552827",
+    "firebase_url": "https://just-tipers-default-rtdb.firebaseio.com",
+    "project_id": "just-tipers",
+    "storage_bucket": "just-tipers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840422552827:android:6ebfc6dd8d3bde53856c5e",
+        "android_client_info": {
+          "package_name": "com.example.justtipers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQn-KlB6lZB3pNhRdQYHvfc0o7Y6Z3klI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
