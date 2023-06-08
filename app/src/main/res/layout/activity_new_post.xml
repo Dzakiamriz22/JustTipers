@@ -33,7 +33,6 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="12dp"
             android:layout_toEndOf="@+id/profile_image"
             android:text="Username"
             android:textColor="@color/black"

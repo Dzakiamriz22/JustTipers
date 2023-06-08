@@ -1,7 +1,10 @@
 package com.example.justtipers
 
+import MyFirebase
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -10,6 +13,9 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.justtipers.ProfilActivity
+import com.example.justtipers.R
+import com.google.firebase.FirebaseApp
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -21,8 +27,7 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var profileImageView: ImageView
 
     private var profileImageUri: Uri? = null
-
-    private lateinit var sharedPreferences: SharedPreferences
+    private val myFirebase = MyFirebase()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,17 +77,19 @@ class RegistrationActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Simpan data registrasi ke SharedPreferences
-            saveUserData(name, username, email, password)
-
-            // Intent Ke MainActivity Setelah Regis Button ditekan
-            val intent = Intent(this, ProfilActivity::class.java)
-            startActivity(intent)
-            finish()
+            myFirebase.registerUser(name, username) { newUserId ->
+                myFirebase.getUserData(newUserId) { name, username ->
+                    val intent = Intent(this, ProfilActivity::class.java)
+                    intent.putExtra("name", name)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                    finish()
+                }
+            }
         }
 
-        // Inisialisasi SharedPreferences
-        sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+        // Inisialisasi Firebase
+        FirebaseApp.initializeApp(this)
     }
 
     // Panggil intent untuk memilih gambar dari galeri
@@ -110,20 +117,4 @@ class RegistrationActivity : AppCompatActivity() {
             profileImageView.setImageURI(it)
         }
     }
-
-    // Simpan data registrasi ke SharedPreferences
-    private fun saveUserData(name: String, username: String, email: String, password: String) {
-        val sharedPref = getSharedPreferences("myPrefs", MODE_PRIVATE)
-        val editor = sharedPref.edit()
-
-        editor.putString("name", name)
-        editor.putString("username", username)
-        editor.putString("email", email)
-        editor.putString("password", password)
-        editor.putString("profileImageUri", profileImageUri.toString())
-
-        editor.commit()
-
-    }
 }
-
